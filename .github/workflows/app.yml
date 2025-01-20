@@ -3,7 +3,7 @@ name: Python package
 on: [push]
 
 jobs:
-  build:
+  outer:
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -17,7 +17,7 @@ jobs:
           python-version: ${{ matrix.python-version }}
       - run: python main.py
 
-  build:
+  inner:
     runs-on: ubuntu-latest
     strategy:
       matrix:
